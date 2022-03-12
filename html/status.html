@@ -13,9 +13,36 @@
       </div>
     </div>
     <main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<script>https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js</script>
 <h2 class="text-3xl">status</h2>
-<canvas id="stage"></canvas>
+<canvas id="cpu"></canvas>
+<script>
+$.ajax("https://api.hortbot.cf/status").done(function(data) {
+    const labels = []
+    const datasets = []
+    for (let i in data) {
+      labels.push(data[i]["time"])
+      const data = []
+      data.push(data[i]["cpu"])
+      datasets.push(
+        {
+          label: 'cpu',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: data,
+        }
+      )
+    }
+    const data = {
+      labels: labels,
+      datasets: datasets
+    };
+    new Chart(
+      document.getElementById('cpu'),
+      data
+    )
+})
+</script>
 </main>
   </body>
 </html>
