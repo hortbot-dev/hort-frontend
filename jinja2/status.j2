@@ -2,6 +2,7 @@
 {% block content %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 <h2 class="text-3xl">status</h2>
+<p id="test"></p>
 <canvas id="cpu"></canvas>
 <script>
 $.ajax("https://api.hortbot.cf/status").done(function(data) {
@@ -13,6 +14,7 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
       for (let n in data[i]) {
         labels.push(data[i]["time"])
         data2.push(data[i][n])
+        $("#test").text(n)
         datasets.push(
           {
             label: data[i],
