@@ -10,16 +10,18 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
     const datasets = []
     const data2 = []
     for (let i in data) {
-      labels.push(data[i]["time"])
-      data2.push(data[i]["cpu"])
-      datasets.push(
-        {
-          label: 'cpu',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: data2,
-        }
-      )
+      for (let n in data[i]) {
+        labels.push(data[i]["time"])
+        data2.push(data[i][data[i][n]])
+        datasets.push(
+          {
+            label: data[i][n],
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: data2,
+          }
+        )
+      }
     }
     const info = {
       labels: labels,
