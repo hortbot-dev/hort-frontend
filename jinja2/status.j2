@@ -5,6 +5,7 @@
 <canvas id="cpu"></canvas>
 <script>
 $.ajax("https://api.hortbot.cf/status").done(function(data) {
+    console.log(data)
     const labels = []
     const datasets = []
     for (let i in data) {
