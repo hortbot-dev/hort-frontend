@@ -23,9 +23,12 @@ jobs:
         run: |
           pip install jinja2
           npm install -D tailwindcss
-      - name: build
+      - name: build jinja2 file
         run:
           python3 build.py
+          npx tailwindcss -i ./static/css/input.css -o ./html/output.css --watch
+      - name: build tailwindcss
+        run:
           npx tailwindcss -i ./static/css/input.css -o ./html/output.css --watch
       - name: push build
         run: |
