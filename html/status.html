@@ -27,14 +27,15 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
     const data2 = []
     for (let i in data) {
       for (let n in data[i]) {
+        if (n === "time") {
+          break
+        }
         labels.push(data[i]["time"])
         data2.push(data[i][n])
         $("#test").text(n)
         datasets.push(
           {
             label: n,
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
             data: data2,
           }
         )
