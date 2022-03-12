@@ -33,7 +33,7 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
         }
       )
     }
-    const data = {
+    const info = {
       labels: labels,
       datasets: datasets
     };
@@ -41,7 +41,7 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
       document.getElementById('cpu'),
       {
         type: "line",
-        data: data,
+        data: info,
         options: {}
       }
     )
