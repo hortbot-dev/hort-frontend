@@ -1,3 +1,6 @@
+# j2の書き方
+
+```jinja2
 <html>
   <head>
     <title>hort bot公式</title>
@@ -7,7 +10,7 @@
       <h1>hortbot公式サイトです</h1>
     </div>
     <main>
-<p>工事中</p>
+<p>hello world<p>
 </main>
   </body>
 </html>
