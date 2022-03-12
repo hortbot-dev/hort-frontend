@@ -467,3 +467,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+
+.flex {
+  display: flex;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
