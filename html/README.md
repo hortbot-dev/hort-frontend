@@ -8,7 +8,7 @@
     <link href="output.css" rel="stylesheet">
   </head>
   <body>
-    <div>
+    <div class="bg-teal-300">
       <h1 class="text-5xl"><a href="/">hortbot</a></h1>
       <div class="flex">
         <a href="/status">status</a>

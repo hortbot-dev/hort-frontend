@@ -472,6 +472,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
+.bg-teal-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(94 234 212 / var(--tw-bg-opacity));
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
