@@ -8,16 +8,16 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
     console.log(data)
     const labels = []
     const datasets = []
+    const data2 = []
     for (let i in data) {
       labels.push(data[i]["time"])
-      const data = []
-      data.push(data[i]["cpu"])
+      data2.push(data[i]["cpu"])
       datasets.push(
         {
           label: 'cpu',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
-          data: data,
+          data: data2,
         }
       )
     }
