@@ -9,7 +9,10 @@
   </head>
   <body>
     <div>
-      <h1 class="text-5xl">hortbot公式サイトです</h1>
+      <h1 class="text-5xl"><a href="/">hortbot</a></h1>
+      <div class="flex">
+        <a href="/status">status</a>
+      </div>
     </div>
     <main>
 <p>hello world<p>
