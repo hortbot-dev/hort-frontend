@@ -11,8 +11,8 @@
     <div class="bg-teal-300">
       <h1 class="text-5xl"><a href="/">hortbot</a></h1>
       <div class="flex">
-        <a class="flex-auto" href="/status">status</a>
-        <a class="flex-auto" href="/support">support</a>
+        <a class="flex-auto bg-teal-400" href="/status">status</a>
+        <a class="flex-auto bg-teal-400" href="/support">support</a>
       </div>
     </div>
     <main>
