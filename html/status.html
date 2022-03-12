@@ -39,7 +39,11 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
     };
     new Chart(
       document.getElementById('cpu'),
-      data
+      {
+        type: "line",
+        data: data,
+        options: {}
+      }
     )
 })
 </script>
