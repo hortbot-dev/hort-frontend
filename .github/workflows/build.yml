@@ -1,1 +1,32 @@
-
+name: build
+on:
+  push:
+    paths:
+      - 'jinja2/**.j2'
+      
+jobs:
+  build:
+    name: build jinja2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: install lib
+        run:
+          pip install jinja2
+      - name: build
+        run:
+          python3 build.py
+      - name: push build
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add .; \
+            git commit -m "pages"; \
+            git push origin HEAD:${GITHUB_REF}; \
+          fi
