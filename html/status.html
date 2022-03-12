@@ -32,7 +32,7 @@ $.ajax("https://api.hortbot.cf/status").done(function(data) {
         $("#test").text(n)
         datasets.push(
           {
-            label: data[i],
+            label: n,
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: data2,
