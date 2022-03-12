@@ -26,10 +26,9 @@ jobs:
       - name: build jinja2 file
         run:
           python3 build.py
-          npx tailwindcss -i ./static/css/input.css -o ./html/output.css --watch
       - name: build tailwindcss
         run:
-          npx tailwindcss -i ./static/css/input.css -o ./html/output.css --watch
+          npx tailwindcss -i ./static/css/input.css -o ./html/output.css
       - name: push build
         run: |
           git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
