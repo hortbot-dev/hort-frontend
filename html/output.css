@@ -476,6 +476,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex: 1 1 auto;
 }
 
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
 .border {
   border-width: 1px;
 }
