@@ -4,8 +4,8 @@ import os
 
 def change(env, path):
     for p in os.listdir(path):
-        if opath.isdir(p):
-            print(p)
+        print(f"{path}/{p}")
+        if opath.isdir(f"{path}/p"):
             change(Environment(loader=FileSystemLoader(f"{path}/{p}", encoding='utf8')), path + p)
         else:
             # print(p)
