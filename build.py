@@ -8,7 +8,7 @@ def change(env, path):
             print(p)
             change(Environment(loader=FileSystemLoader(f"{path}/{p}", encoding='utf8')), path + p)
         else:
-            print(p)
+            # print(p)
             tpl = env.get_template(p)
             with open("./html/" + p.replace(".j2", ".html"), "w") as f:
                 f.write(tpl.render())
