@@ -4,9 +4,8 @@ import os
 
 def change(env, path):
     for p in os.listdir(path):
-        print(f"{path}/{p}")
-        if opath.isdir(f"{path}/p"):
-            change(Environment(loader=FileSystemLoader(f"{path}/{p}", encoding='utf8')), path + p)
+        if opath.isdir(f"{path}{p}"):
+            change(Environment(loader=FileSystemLoader(f"{path}{p}", encoding='utf8')), path + p)
         else:
             # print(p)
             tpl = env.get_template(p)
