@@ -11,4 +11,4 @@ def change(env, path):
             with open("./html/" + p.replace(".j2", ".html"), "w") as f:
                 f.write(tpl.render())
                 
-change(Environment(loader=FileSystemLoader("jinja2", encoding='utf8')), "jinja2")
+change(Environment(loader=FileSystemLoader("jinja2", encoding='utf8')), "jinja2/")
