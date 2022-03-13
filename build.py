@@ -9,7 +9,7 @@ def change(env, path):
         else:
             # print(p)
             tpl = env.get_template(p)
-            with open("./html/" + path + p.replace(".j2", ".html"), "w") as f:
+            with open("./html/" + p.replace(".j2", ".html"), "w") as f:
                 f.write(tpl.render())
                 
 change(Environment(loader=FileSystemLoader("jinja2", encoding='utf8')), "jinja2/")
