@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>hort bot公式</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link href="/output.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="bg-teal-300">
+      <h1 class="text-5xl"><a href="/">hortbot</a></h1>
+      <div class="flex">
+        <a class="flex-auto bg-teal-400 border rounded-md border-emerald-600 text-center" href="/status">status</a>
+        <a class="flex-auto bg-teal-400 border rounded-md border-emerald-600 text-center" href="https://hortbot.cf/invite">invite</a>
+        <a class="flex-auto bg-teal-400 border rounded-md border-emerald-600 text-center" href="/support">support</a>
+        <a class="flex-auto bg-teal-400 border rounded-md border-emerald-600 text-center" href="/login">login</a>
+      </div>
+    </div>
+    <main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<h2 class="text-3xl">status</h2>
+<p>まだ完成できていません。もうちょっと待っててね。</p>
+<p id="test"></p>
+<canvas id="cpu"></canvas>
+<script>
+$.ajax("https://api.hortbot.cf/status").done(function(data) {
+    console.log(data)
+    const labels = []
+    const datasets = []
+    const data2 = []
+    for (let i in data) {
+      for (let n in data[i]) {
+        if (n === "time") {
+          break
+        }
+        labels.push(data[i]["time"])
+        data2.push(data[i][n])
+        $("#test").text(n)
+        datasets.push(
+          {
+            label: n,
+            data: data2,
+          }
+        )
+      }
+    }
+    const info = {
+      labels: labels,
+      datasets: datasets
+    };
+    new Chart(
+      document.getElementById('cpu'),
+      {
+        type: "line",
+        data: info,
+        options: {}
+      }
+    )
+})
+</script>
+</main>
+  </body>
+</html>
