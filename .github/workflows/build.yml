@@ -28,7 +28,7 @@ jobs:
           python3 build.py
       - name: build tailwindcss
         run:
-          npx tailwindcss -i ./static/css/input.css -o ./html/output.css
+          npx tailwindcss -i ./static/css/input.css -o ./static/output.css
       - name: push build
         run: |
           git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
